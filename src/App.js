@@ -1,24 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { ThemeProvider } from "@mui/material/styles";
+import { Container, Paper } from "@mui/material";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
+import appTheme from "./config/theme";
+import News from "./pages/News";
+import PageNotFound from "./pages/PageNotFound";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={appTheme}>
+      <Paper style={{ height: "100vh", borderRadius: 0, overflow: "auto" }}>
+        <Router>
+          <div className="App">
+            <Container maxWidth="xl" component="main">
+              <Routes>
+                <Route path="/" element={<News />} />
+                <Route path="/news" element={<Navigate replace to="/" />} />
+                <Route path="*" element={<PageNotFound />} />
+              </Routes>
+            </Container>
+          </div>
+        </Router>
+      </Paper>
+    </ThemeProvider>
   );
 }
 
