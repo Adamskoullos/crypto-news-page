@@ -13,7 +13,7 @@ const News = () => {
       <Typography variant="h1" color="primary" sx={{ pt: "5vh" }}>
         News Page
       </Typography>
-      <Grid container spacing={4} sx={{ mt: 3 }}>
+      <Grid container spacing={4} sx={{ my: 3 }}>
         {cryptoNews.map((item, index) => (
           <ItemCard item={item} key={index} i={index} />
         ))}

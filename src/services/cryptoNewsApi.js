@@ -7,10 +7,6 @@ const cryptoNewsHeaders = {
 
 const baseUrl = process.env.REACT_APP_CRYPTO_NEWS_BASE_URL;
 
-console.log("host: ", process.env.REACT_APP_CRYPTO_NEWS_HOST);
-console.log("key: ", process.env.REACT_APP_CRYPTO_NEWS_API_KEY);
-console.log("base: ", process.env.REACT_APP_CRYPTO_NEWS_BASE_URL);
-
 const createRequest = (url) => ({ url, headers: cryptoNewsHeaders });
 
 export const cryptoNewsApi = createApi({

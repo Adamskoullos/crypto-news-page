@@ -1,5 +1,4 @@
 import {
-  Avatar,
   Card,
   CardActionArea,
   CardContent,
@@ -8,7 +7,7 @@ import {
   Typography,
 } from "@mui/material";
 import { Link } from "react-router-dom";
-import ItemHeader from "../ItemHeader";
+import ItemFooter from "../ItemFooter";
 
 const ItemCard = ({ item, i }) => {
   return (
@@ -16,45 +15,15 @@ const ItemCard = ({ item, i }) => {
       <Link to={`/news/${i}`} style={{ textDecoration: "none" }}>
         <Card variant="outlined" sx={{ height: "100%" }}>
           <CardActionArea>
-            {/* <CardHeader> */}
-            <ItemHeader item={item} />
-            {/* </CardHeader> */}
+            <CardHeader title={item.title} />
             <CardContent>
-              <Typography>
-                Set aside off of the heat to let rest for 10 minutes, and then
-                serve.
-              </Typography>
+              <Typography>{item.description}</Typography>
             </CardContent>
+            <ItemFooter item={item} />
           </CardActionArea>
         </Card>
       </Link>
     </Grid>
-    // <Grid item xs={12} sm={6} md={4} lg={3}>
-    //   <Link to={`/news/${i}`} style={{ textDecoration: "none" }}>
-    //     <Card variant="outlined" sx={{ height: "100%" }}>
-    //       <CardActionArea>
-    //         <CardHeader
-    //           avatar={
-    //             <Avatar sx={{ bgcolor: "goldenRod" }} aria-label="recipe">
-    //               V
-    //             </Avatar>
-    //           }
-    //           title={item.title}
-    //           // subheader={item.description}
-    //         />
-    //         <CardMedia
-    //           component="img"
-    //           height="150rem"
-    //           image={
-    //             item?.image?.thumbnail?.contentUrl ||
-    //             "https://media.timeout.com/images/105124791/750/422/image.jpg"
-    //           }
-    //           alt="Paella dish"
-    //         />
-    //       </CardActionArea>
-    //     </Card>
-    //   </Link>
-    // </Grid>
   );
 };
 
