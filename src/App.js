@@ -19,8 +19,8 @@ function App() {
           <div className="App">
             <Container maxWidth="md" component="main">
               <Routes>
-                <Route path="/news" element={<News />} />
-                <Route path="/" element={<Navigate replace to="/news" />} />
+                <Route path="/" element={<News />} />
+                <Route path="/news" element={<Navigate replace to="/" />} />
                 <Route path="*" element={<PageNotFound />} />
               </Routes>
             </Container>
