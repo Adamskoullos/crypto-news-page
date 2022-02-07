@@ -12,7 +12,7 @@ import ItemFooter from "../ItemFooter";
 const ItemCard = ({ item, i }) => {
   return (
     <Grid item xs={12}>
-      <Link to={`/news/${i}`} style={{ textDecoration: "none" }}>
+      <a href={item.link} style={{ textDecoration: "none" }} target="_blank">
         <Card variant="outlined" sx={{ height: "100%" }}>
           <CardActionArea>
             <CardHeader title={item.title} sx={{ color: "goldenrod" }} />
@@ -24,7 +24,7 @@ const ItemCard = ({ item, i }) => {
             <ItemFooter item={item} />
           </CardActionArea>
         </Card>
-      </Link>
+      </a>
     </Grid>
   );
 };
