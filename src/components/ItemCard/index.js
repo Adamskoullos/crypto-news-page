@@ -6,7 +6,7 @@ import {
   Grid,
   Typography,
 } from "@mui/material";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import ItemFooter from "../ItemFooter";
 
 const ItemCard = ({ item, i }) => {
