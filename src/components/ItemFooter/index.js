@@ -48,6 +48,7 @@ const ItemFooter = ({ item }) => {
             margin: 1,
             display: "inline-block",
             whiteSpace: "nowrap",
+            color: "darkGrey",
           }}
         >
           {item.source}
@@ -57,6 +58,7 @@ const ItemFooter = ({ item }) => {
             margin: 1,
             display: "inline-block",
             whiteSpace: "nowrap",
+            color: "goldenRod",
           }}
         >
           {item.date}

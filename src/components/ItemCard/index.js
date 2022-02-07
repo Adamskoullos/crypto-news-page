@@ -15,9 +15,11 @@ const ItemCard = ({ item, i }) => {
       <Link to={`/news/${i}`} style={{ textDecoration: "none" }}>
         <Card variant="outlined" sx={{ height: "100%" }}>
           <CardActionArea>
-            <CardHeader title={item.title} />
+            <CardHeader title={item.title} sx={{ color: "goldenrod" }} />
             <CardContent>
-              <Typography>{item.description}</Typography>
+              <Typography sx={{ color: "darkGrey" }}>
+                {item.description}
+              </Typography>
             </CardContent>
             <ItemFooter item={item} />
           </CardActionArea>

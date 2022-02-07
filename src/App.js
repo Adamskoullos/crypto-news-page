@@ -17,7 +17,7 @@ function App() {
       <Paper style={{ height: "100vh", borderRadius: 0, overflow: "auto" }}>
         <Router>
           <div className="App">
-            <Container maxWidth="xl" component="main">
+            <Container maxWidth="md" component="main">
               <Routes>
                 <Route path="/news" element={<News />} />
                 <Route path="/" element={<Navigate replace to="/news" />} />
