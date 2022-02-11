@@ -1,0 +1,12 @@
+.news-header {
+  display: flex;
+  align-items: center;
+  margin-top: 1rem;
+  height: 20vh;
+  background: linear-gradient(
+      to right,
+      RGBA(128, 0, 128, 0.4),
+      rgba(214, 182, 0, 0.6)
+    ),
+    url(../../assets/images/header.png) center center no-repeat;
+}

@@ -1,4 +1,5 @@
 import { Grid, Typography } from "@mui/material";
+import Header from "../../components/Header";
 import ItemCard from "../../components/ItemCard";
 import { useGetCryptoNewsQuery } from "../../services/cryptoNewsApi";
 
@@ -7,13 +8,20 @@ const News = () => {
 
   console.log(cryptoNews);
 
-  if (!cryptoNews) return "Loading...";
+  if (!cryptoNews)
+    return (
+      <Grid container sx={{ my: 2 }} fontWeightLight>
+        <Typography
+          variant="h4"
+          sx={{ fontWeight: 300, ml: 2, color: "darkGrey" }}
+        >
+          Loading latest news...
+        </Typography>
+      </Grid>
+    );
   return (
     <div style={{ height: "100%" }}>
-      <Typography variant="h1" color="primary" sx={{ pt: "5vh" }}>
-        News Page
-      </Typography>
-      <Grid container spacing={4} sx={{ my: 3 }}>
+      <Grid container spacing={4} sx={{ my: 2 }} fontWeightLight>
         {cryptoNews.map((item, index) => (
           <ItemCard item={item} key={index} i={index} />
         ))}

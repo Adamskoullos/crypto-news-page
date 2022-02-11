@@ -10,6 +10,7 @@ import {
 import appTheme from "./config/theme";
 import News from "./pages/News";
 import PageNotFound from "./pages/PageNotFound";
+import Header from "./components/Header";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Router>
           <div className="App">
             <Container maxWidth="md" component="main">
+              <Header />
               <Routes>
                 <Route path="/" element={<News />} />
                 <Route path="/news" element={<Navigate replace to="/" />} />
