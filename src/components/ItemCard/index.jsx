@@ -20,7 +20,12 @@ const ItemCard = ({ item, i }) => {
       >
         <Card variant="outlined" sx={{ height: "100%" }}>
           <CardActionArea>
-            <CardHeader title={item.title} sx={{ color: "goldenrod" }} />
+            <CardHeader
+              title={item.title}
+              // sx={{ color: "rgba(202,224,13, 0.6)" }}
+              // sx={{ color: "rgba(177,156,217, 0.6)" }}
+              sx={{ color: "rgba(177,156,217, 0.7)" }}
+            />
             <CardContent>
               <Typography sx={{ color: "darkGrey" }}>
                 {item.description}

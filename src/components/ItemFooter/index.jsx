@@ -30,6 +30,7 @@ const ItemFooter = ({ item }) => {
             sx={{
               margin: 1,
               display: "inline-block",
+              boxShadow: 2,
             }}
           />
         ))}
@@ -58,7 +59,7 @@ const ItemFooter = ({ item }) => {
             margin: 1,
             display: "inline-block",
             whiteSpace: "nowrap",
-            color: "goldenRod",
+            color: "rgba(118,255,122, 0.5)",
           }}
         >
           {item.date}
