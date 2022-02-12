@@ -1,4 +1,5 @@
 import {
+  autocompleteClasses,
   Checkbox,
   FormControl,
   InputLabel,
@@ -21,18 +22,17 @@ const MenuProps = {
 
 const FilterTags = ({ tags, filteredTags, setFilteredTags }) => {
   const handleChange = (event) => {
-    const {
-      target: { value },
-    } = event;
-    setFilteredTags(
-      // On autofill we get a stringified value.
-      typeof value === "string" ? value.split(",") : value
-    );
+    // const {
+    //   target: { value },
+    // } = event;
+    // setFilteredTags();
+    // // On autofill we get a stringified value.
+    // typeof value === "string" ? value.split(",") : value
   };
 
   return (
     <div>
-      <FormControl sx={{ m: 1, width: 300 }}>
+      <FormControl sx={{ width: 300 }}>
         <InputLabel id="demo-multiple-checkbox-label">Tag</InputLabel>
         <Select
           labelId="demo-multiple-checkbox-label"
@@ -45,9 +45,9 @@ const FilterTags = ({ tags, filteredTags, setFilteredTags }) => {
           MenuProps={MenuProps}
         >
           {tags.map((tag) => (
-            <MenuItem key={tag.symbol} value={tag.name}>
-              <Checkbox checked={tags.indexOf(tag.symbol) > -1} />
-              <ListItemText primary={tag.name} />
+            <MenuItem key={tag} value={tag}>
+              <Checkbox checked={tags.indexOf(tag) > -1} />
+              <ListItemText primary={tag} />
             </MenuItem>
           ))}
         </Select>

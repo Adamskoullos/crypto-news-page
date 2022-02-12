@@ -25,6 +25,7 @@ const ItemFooter = ({ item }) => {
       >
         {item.tags.map((coin) => (
           <Avatar
+            key={coin.symbol}
             alt={coin.symbol}
             src={coin.icon}
             sx={{
@@ -59,7 +60,8 @@ const ItemFooter = ({ item }) => {
             margin: 1,
             display: "inline-block",
             whiteSpace: "nowrap",
-            color: "rgba(118,255,122, 0.7)",
+            // color: "rgba(0,255,127, 0.7)",
+            color: "rgba(146,161,207, 1)",
           }}
         >
           {item.date}

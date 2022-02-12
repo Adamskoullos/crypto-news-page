@@ -22,9 +22,8 @@ const ItemCard = ({ item, i }) => {
           <CardActionArea>
             <CardHeader
               title={item.title}
-              // sx={{ color: "rgba(202,224,13, 0.6)" }}
-              // sx={{ color: "rgba(177,156,217, 0.6)" }}
-              sx={{ color: "rgba(177,156,217, 0.7)" }}
+              sx={{ color: "rgba(146,161,207, 0.9)" }}
+              // sx={{ color: "rgba(0,255,127, 0.4)" }}
             />
             <CardContent>
               <Typography sx={{ color: "darkGrey" }}>
