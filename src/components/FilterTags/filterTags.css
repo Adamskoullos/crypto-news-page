@@ -1,0 +1,11 @@
+.MuiOutlinedInput-notchedOutline {
+  border-color: rgba(169, 169, 169, 0.2) !important;
+}
+
+.MuiFormLabel-root.MuiInputLabel-root {
+  color: rgba(169, 169, 169, 0.4) !important;
+}
+
+.filter-tags svg.MuiSvgIcon-root.MuiSelect-icon {
+  color: rgba(169, 169, 169, 0.4) !important;
+}

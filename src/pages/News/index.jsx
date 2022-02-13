@@ -1,23 +1,34 @@
-// import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import { Grid, Typography } from "@mui/material";
 import ItemCard from "../../components/ItemCard";
 import { useGetCryptoNewsQuery } from "../../services/cryptoNewsApi";
-// import createTagsArray from "../News/createTagsArray";
-// import FilterTags from "../../components/FilterTags";
+import createTagsArray from "../News/createTagsArray";
+import FilterTags from "../../components/FilterTags";
 
 const News = () => {
   const { data: cryptoNews } = useGetCryptoNewsQuery();
-  // let tags;
-  // if (cryptoNews) {
-  //   tags = createTagsArray(cryptoNews);
-  // }
+  const [filteredArticles, setFilteredArticles] = useState([]);
+  const [filteredTags, setFilteredTags] = useState([]);
 
-  // const [filteredTags, setFilteredTags] = useState([]);
+  let tags;
+  if (cryptoNews) {
+    tags = createTagsArray(cryptoNews);
+  }
+
+  useEffect(() => {
+    if (cryptoNews) {
+      setFilteredArticles(cryptoNews);
+    }
+  }, [cryptoNews]);
+
   // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-  // console.log(cryptoNews);
 
-  if (!cryptoNews)
+  // Work on updating filteredArticles using filteredTags
+
+  // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+  if (!filteredArticles)
     return (
       <Grid container sx={{ my: 2 }}>
         <Typography
@@ -31,14 +42,14 @@ const News = () => {
   return (
     <div style={{ height: "100%" }}>
       <Grid container spacing={4} sx={{ mb: 4, pt: 1 }}>
-        <Grid item xs={12} sx={{ display: "flex", justifyContent: "flex-end" }}>
-          {/* <FilterTags
+        <Grid item xs={12} sx={{}}>
+          <FilterTags
             tags={tags}
             filteredTags={filteredTags}
             setFilteredTags={setFilteredTags}
-          /> */}
+          />
         </Grid>
-        {cryptoNews.map((item, index) => (
+        {filteredArticles.map((item, index) => (
           <ItemCard item={item} key={index} i={index} />
         ))}
       </Grid>
