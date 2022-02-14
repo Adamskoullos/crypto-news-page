@@ -21,11 +21,9 @@ const MenuProps = {
 
 const FilterTags = ({ tags, filteredTags, setFilteredTags }) => {
   const handleChange = (event) => {
-    console.log(event.target.value);
     const {
       target: { value },
     } = event;
-    // On autofill we get a stringified value.
     setFilteredTags(typeof value === "string" ? value.split(",") : value);
   };
 

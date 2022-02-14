@@ -5,6 +5,7 @@ import ItemCard from "../../components/ItemCard";
 import { useGetCryptoNewsQuery } from "../../services/cryptoNewsApi";
 import createTagsArray from "../News/createTagsArray";
 import FilterTags from "../../components/FilterTags";
+import filteredArray from "../News/filteredArray";
 
 const News = () => {
   const { data: cryptoNews } = useGetCryptoNewsQuery();
@@ -22,9 +23,12 @@ const News = () => {
     }
   }, [cryptoNews]);
 
-  // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-
-  // Work on updating filteredArticles using filteredTags
+  useEffect(() => {
+    if (cryptoNews) {
+      const articles = filteredArray(filteredTags, cryptoNews);
+      setFilteredArticles(articles);
+    }
+  }, [filteredTags]);
 
   // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
