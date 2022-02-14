@@ -19,16 +19,10 @@ const News = () => {
 
   useEffect(() => {
     if (cryptoNews) {
-      setFilteredArticles(cryptoNews);
-    }
-  }, [cryptoNews]);
-
-  useEffect(() => {
-    if (cryptoNews) {
       const articles = filteredArray(filteredTags, cryptoNews);
       setFilteredArticles(articles);
     }
-  }, [filteredTags]);
+  }, [filteredTags, cryptoNews]);
 
   // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
