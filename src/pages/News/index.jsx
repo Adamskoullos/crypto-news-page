@@ -26,7 +26,7 @@ const News = () => {
 
   // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
-  if (!filteredArticles)
+  if (!cryptoNews)
     return (
       <Grid container sx={{ my: 2 }}>
         <Typography
